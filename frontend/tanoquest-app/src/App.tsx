@@ -1,11 +1,17 @@
 import { useState } from 'react'
+import { createClient } from "@supabase/supabase-js";
+import { Database } from "./database.types";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const supabase = createClient<Database>(
 
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
   return (
     <>
       <div>
