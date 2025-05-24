@@ -1,5 +1,5 @@
 // src/pages/ClassesPage.jsx
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from '../models/supabaseClient';
 import type Class from '../models/Class';
 
