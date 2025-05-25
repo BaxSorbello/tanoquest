@@ -12,7 +12,7 @@ export default function SignIn() {
         const signInResponse = await supabase.auth.signInWithOAuth({
                                 provider: 'github',
                                 options: {
-                                  redirectTo: 'http://localhost:5173/callback',
+                                  redirectTo: callbackUrl,
                                 },
                           });
         if (signInResponse.error) {
