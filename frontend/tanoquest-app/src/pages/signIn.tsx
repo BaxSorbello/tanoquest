@@ -2,8 +2,8 @@
 import { SignInPage } from '@toolpad/core/SignInPage';
 import { supabase } from '../models/supabaseClient';
 
-
 export default function SignIn() {
+
   return (
     <SignInPage
       providers={[{ id: 'github', name: 'GitHub' }]}
@@ -12,7 +12,7 @@ export default function SignIn() {
         const signInResponse = await supabase.auth.signInWithOAuth({
                                 provider: 'github',
                                 options: {
-                                  redirectTo: callbackUrl,
+                                  redirectTo: 'http://localhost:5173/callback',
                                 },
                           });
         if (signInResponse.error) {

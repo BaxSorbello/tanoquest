@@ -5,6 +5,7 @@ import App from './App';
 import Layout from './layouts/dashboard';
 import SignInPage from './pages/signIn';
 import ClassesPage from './pages/ClassesPage';
+import CallbackPage from './pages/callback';
 
 const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
                 path: '/sign-in',
                 Component: SignInPage,
             },
+            {
+                path: '/callback',
+                Component: CallbackPage,
+            }
         ],
     },
 ]);

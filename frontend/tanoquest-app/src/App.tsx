@@ -4,6 +4,7 @@ import { Outlet, useNavigate } from 'react-router';
 import { ReactRouterAppProvider } from '@toolpad/core/react-router';
 import type { Navigation,Session} from '@toolpad/core/AppProvider';
 import { SessionContext } from './SessionContext';
+import { supabase } from './models/supabaseClient';
 
 
 const NAVIGATION: Navigation = [
@@ -34,8 +35,9 @@ export default function App() {
     }, [navigate]);
 
     const signOut = React.useCallback(() => {
-        setSession(null);
-        navigate('/sign-in');
+        supabase.auth.signOut().then(() => {
+            setSession(null);
+        navigate('/sign-in');});
     }, [navigate]);
 
     const sessionContextValue = React.useMemo(() => ({ session, setSession }), [session, setSession]);
