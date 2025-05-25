@@ -9,7 +9,7 @@ export default function Layout() {
     const { session,setSession } = useSession();
     const location = useLocation();
 
-    const enabledSession = false;
+    const enabledSession = true;
 
  useEffect(() => {
     const getSession = async () => {
